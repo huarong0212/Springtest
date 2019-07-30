@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+jar {
+    baseName = 'knight'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework:spring-context:5.0.7.RELEASE")
+	testCompile "org.mockito:mockito-core:1.+"
+	testImplementation 'junit:junit:4.12'
+}

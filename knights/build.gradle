@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+jar {
+    baseName = 'knight'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework:spring-context:4.3.21.RELEASE")
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from configurations.runtime
+}
+
+build.dependsOn(copyToLib)
